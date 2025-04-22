@@ -1,0 +1,87 @@
+/* === CONTENEDOR PRINCIPAL === */
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
+    margin: 40px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === IMÁGENES === */
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;  /* Animación suave */
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slideactive {
+    display: block;
+}
+
+/* === BOTONES DE NAVEGACIÓN === */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #F1D4CE;
+    color: #002441;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.prev :hover, .next :hover {
+    background: #F1D4CE;;
+}
+
+
+/* === PUNTOS INDICADORES (opcional) === */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #F1D4CE;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #002441;          /* Color del diseño */
+    transform: scale(1.2);
+}
