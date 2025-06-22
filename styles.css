@@ -1,0 +1,134 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cv-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.cv-form input[type="text"],
+.cv-form input[type="email"],
+.cv-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%; /* Make form elements take full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.cv-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.cv-form button[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.cv-form button[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+.cv-preview {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.cv-preview h2 {
+    color: #333;
+    border-bottom: 2px solid #5cb85c;
+    padding-bottom: 5px;
+}
+
+.cv-preview p {
+    margin-bottom: 10px;
+}
+
+/* Initially hide the preview area if it's empty */
+.cv-preview:empty {
+    display: none;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background-color: #fff; /* Ensure background is white for printing */
+        color: #000; /* Ensure text is black */
+        font-size: 12pt; /* Adjust font size for print */
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none; /* Remove shadow for print */
+    }
+
+    .cv-form,
+    h1, /* Hide the main title */
+    .cv-form button[type="submit"] /* Hide the generate button */ {
+        display: none !important; /* Important to override other styles */
+    }
+
+    .cv-preview {
+        display: block !important; /* Ensure preview is visible */
+        border: none; /* Remove border for print */
+        margin: 0;
+        padding: 0;
+        background-color: #fff; /* Ensure background is white */
+        width: 100%; /* Take full width for printing */
+    }
+
+    .cv-preview h2 {
+        border-bottom: 2px solid #000; /* Black border for print */
+        padding-bottom: 5px;
+        margin-top: 0; /* Adjust top margin for print */
+    }
+
+    .cv-preview p {
+        orphans: 3; /* Minimum lines at the bottom of a page */
+        widows: 3;  /* Minimum lines at the top of a page */
+    }
+
+    /* Ensure links are not colored or underlined if not desired for print */
+    a, a:visited {
+        color: #000;
+        text-decoration: none;
+    }
+}
